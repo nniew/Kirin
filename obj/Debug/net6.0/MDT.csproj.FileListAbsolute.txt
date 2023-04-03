@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\MDT\bin\Debug\net6.0\MDT.exe
+C:\Users\Administrator\Desktop\MDT\bin\Debug\net6.0\MDT.deps.json
+C:\Users\Administrator\Desktop\MDT\bin\Debug\net6.0\MDT.runtimeconfig.json
+C:\Users\Administrator\Desktop\MDT\bin\Debug\net6.0\MDT.dll
+C:\Users\Administrator\Desktop\MDT\bin\Debug\net6.0\MDT.pdb
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\MDT.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\MDT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\MDT.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\MDT.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\MDT.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\MDT.dll
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\refint\MDT.dll
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\MDT.pdb
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\MDT.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\MDT\obj\Debug\net6.0\ref\MDT.dll
