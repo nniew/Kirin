@@ -2,68 +2,55 @@
 
 class Program {
     static void Main(string[] args) {
-        double sum = 0.0;
-        double max = Double.MinValue;
-        double min = Double.MaxValue;
-        int count = 0;
+        Console.Write("Enter number of items in bag: ");
+        int numberOfItems = Convert.ToInt32(Console.ReadLine());
+        
+        string[] itemNames = new string[numberOfItems];
+        string[] itemTypes = new string[numberOfItems];
 
-        while (true) {
-            Console.Write("Enter a number (type 'End' to finish): ");
-            string input = Console.ReadLine();
+        // รับค่ารายละเอียดของไอเทมที่ใส่ลงในกระเป๋า
+        for (int i = 0; i < numberOfItems; i++) {
+            Console.WriteLine($"Enter details for item {i + 1}:");
 
-            if (input.ToLower() == "end") {
-                break;
-            }
+            Console.Write("Item name: ");
+            string itemName = Console.ReadLine();
 
-            double number;
-            if (!Double.TryParse(input, out number)) {
-                Console.WriteLine("Invalid input. Please enter a number.");
+            // ตรวจสอบว่าชื่อไอเทมนี้มีอยู่แล้วหรือไม่
+            if (Array.IndexOf(itemNames, itemName) >= 0) {
+                Console.WriteLine("Item name already exists!");
+                i--;
                 continue;
             }
 
-            sum += number;
-            count++;
+            Console.Write("Item type: ");
+            string itemType = Console.ReadLine();
 
-            if (number > max) {
-                max = number;
-            }
-
-            if (number < min) {
-                min = number;
-            }
+            itemNames[i] = itemName;
+            itemTypes[i] = itemType;
         }
 
-        Console.WriteLine();
-
+        // หากผู้ใช้กรอก "ShowAll" ให้แสดงรายการทั้งหมด
+        // หากผู้ใช้กรอกประเภทของไอเทม ให้แสดงรายการที่ตรงกับประเภทนั้น
         while (true) {
-            Console.Write("Enter the statistical mode ('FindMax', 'FindMin', 'FindMean', or 'End' to exit): ");
-            string mode = Console.ReadLine();
+            Console.Write("Enter search mode ('ShowAll' or item type): ");
+            string searchMode = Console.ReadLine();
 
-            if (mode.ToLower() == "end") {
+            if (searchMode.Equals("ShowAll")) {
+                for (int i = 0; i < numberOfItems; i++) {
+                    Console.WriteLine($"{itemNames[i]} ({itemTypes[i]})");
+                }
+            }
+            else if (Array.IndexOf(itemTypes, searchMode) >= 0) {
+                for (int i = 0; i < numberOfItems; i++) {
+                    if (itemTypes[i].Equals(searchMode)) {
+                        Console.WriteLine($"{itemNames[i]}");
+                    }
+                }
+            }
+            else {
+                Console.WriteLine("End");
                 break;
             }
-
-            switch (mode.ToLower()) {
-                case "findmax":
-                    Console.WriteLine("The maximum number is: " + max);
-                    break;
-                case "findmin":
-                    Console.WriteLine("The minimum number is: " + min);
-                    break;
-                case "findmean":
-                    if (count > 0) {
-                        double mean = sum / count;
-                        Console.WriteLine("The mean is: " + mean);
-                    } else {
-                        Console.WriteLine("No numbers entered.");
-                    }
-                    break;
-                default:
-                    Console.WriteLine("Invalid mode.");
-                    break;
-            }
-
-            Console.WriteLine();
         }
     }
 }
